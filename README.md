@@ -27,12 +27,12 @@
     - 블록 암호의 운용 모드가 CBC/OFB/CFB를 사용할 경우에는 Initialization Vector(IV), IvParameterSpec를 설정해줘야한다. 
     - 아니면 InvalidAlgorithmParameterException 발생
     - Cipher-Mode
-    > **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
-    >
-    > **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 
-    > 
-    > **WRAP_MODE**: cipher 객체를 key-wrapping 모드로 초기화한다. 
-    > 
-    > **UNWRAP_MODE**: cipher 객체를  key-unwrapping 모드로 초기화한다.
+        > **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
+        >
+        > **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 
+        > 
+        > **WRAP_MODE**: cipher 객체를 key-wrapping 모드로 초기화한다. 
+        > 
+        > **UNWRAP_MODE**: cipher 객체를  key-unwrapping 모드로 초기화한다.
 
 

@@ -16,7 +16,7 @@
 - 즉 256 bit의 평문을 암호화 할 때 두 개의 128 bit로 쪼개서 각각 암호화를 수행하게 된다.
 - 또한 128 bit의 블럭으로 쪼개기 때문에 128 bit 보다 작은 블럭이 나올 수 있는데 이런 블럭은 뒤에 값을 붙여주는데 이 값을 padding이라고 부른다.
 - 구현할때 사용하는 패딩의 종류를 보면 PKCS#5 padding을 사용하고 있다.
-- https://perfectacle.github.io/2019/11/24/aes/ 참조
+- 양권석님 블로그 https://perfectacle.github.io/2019/11/24/aes/ 참조
 
 ## 구현 순서 ##
 1. 암호화, 복호화 기능을 제공하는 Cipher 클래스 객체 인스턴스화
@@ -24,6 +24,10 @@
     ````java
     Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     ````
+    - EBC (Electronic Codebook) : 실무에서는 절대 사용하면 안 되는 Mode
+    - 보안적 결함 때문에 1 ~ 127 bit의 데이터를 암호화 할 때만 사용해야한다고 한다.
+    - 그래서 CBC모드를 사용하기를 권장한다. ( 양권석님 블로그 )
+
 2. SecretKey 생성
     ````java
     SecretKey secretKey = new SecretKeySpec("키로만들문자열".getBytes("UTF-8"), "AES");

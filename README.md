@@ -10,7 +10,7 @@
 
 ## 구현 순서 ##
 1. 암호화, 복호화 기능을 제공하는 Cipher 클래스 객체 인스턴스화
-    - AES 암호화, CBC operation mode, PKCS5 padding scheme로 초기화
+    - AES 암호화, CBC operation mode ( 블록 암호의 운용 모드 ), PKCS5 padding scheme로 초기화
     ````java
     Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     ````
@@ -21,9 +21,13 @@
     
 3. Cipher 초기화(Initialization)
     ````java
-    cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+    cipher.init(Cipher.ENCRYPT_MODE, SecretKey, IvParameterSpec);
     ````
+    - **SecretKey와 IvParameterSpec Byte수가 같아야 한다.**
     - **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
     - **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 
     - **WRAP_MODE**: cipher 객체를 key-wrapping 모드로 초기화한다. 
     - **UNWRAP_MODE**: cipher 객체를  key-unwrapping 모드로 초기화한다. 
+
+    - 블록 암호의 운용 모드가 CBC/OFB/CFB를 사용할 경우에는 Initialization Vector(IV), IvParameterSpec를 설정해줘야한다. 
+    - 아니면 InvalidAlgorithmParameterException 발생

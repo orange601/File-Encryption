@@ -21,7 +21,7 @@
     
 3. Cipher 초기화(Initialization)
     ````java
-    cipher.init(Cipher.DECRYPT_MODE, secretKey);
+    cipher.init(Cipher.ENCRYPT_MODE, secretKey);
     ````
     - **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
     - **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 

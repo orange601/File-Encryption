@@ -25,8 +25,8 @@
     Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     ````
     - EBC (Electronic Codebook) : 실무에서는 절대 사용하면 안 되는 Mode
-    - 보안적 결함 때문에 1 ~ 127 bit의 데이터를 암호화 할 때만 사용해야한다고 한다.
-    - 그래서 CBC모드를 사용하기를 권장한다. ( 양권석님 블로그 )
+        > 보안적 결함 때문에 1 ~ 127 bit의 데이터를 암호화 할 때만 사용해야한다고 한다.
+        > 그래서 CBC모드를 사용하기를 권장한다. ( 양권석님 블로그 )
 
 2. SecretKey 생성
     ````java

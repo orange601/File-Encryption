@@ -7,9 +7,9 @@
 3. 더 자세한 내용은 https://github.com/orange601/Encrypt 참조한다.
 
 ## 구현 순서 ##
-1. 암호화, 복호화 기능을 제공하는 Cipher 클래스 객체 인스턴스화
-  - AES 암호화, CBC operation mode, PKCS5 padding scheme로 초기화
-````java
-Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-````
+  1. 암호화, 복호화 기능을 제공하는 Cipher 클래스 객체 인스턴스화
+      - AES 암호화, CBC operation mode, PKCS5 padding scheme로 초기화
+      ````java
+      Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+      ````
   

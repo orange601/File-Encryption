@@ -14,4 +14,16 @@
     ````java
     Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
     ````
-2. Cipher 초기화(Initialization)
+2. SecretKey 생성
+    ````java
+    SecretKey secretKey = new SecretKeySpec("키로만들문자열".getBytes("UTF-8"), "AES");
+    ````
+    
+3. Cipher 초기화(Initialization)
+    ````java
+    cipher.init(Cipher.DECRYPT_MODE, secretKey);
+    ````
+    - **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
+    - **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 
+    - **WRAP_MODE**: cipher 객체를 key-wrapping 모드로 초기화한다. 
+    - **UNWRAP_MODE**: cipher 객체를  key-unwrapping 모드로 초기화한다. 

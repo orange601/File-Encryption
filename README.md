@@ -24,9 +24,10 @@
     cipher.init(Cipher.ENCRYPT_MODE, SecretKey, IvParameterSpec);
     ````
     - **SecretKey와 IvParameterSpec Byte수가 같아야 한다.**
+        > 128bit (16자리 16Byte), 256bit (32자리 32Byte)
     - 블록 암호의 운용 모드가 CBC/OFB/CFB를 사용할 경우에는 Initialization Vector(IV), IvParameterSpec를 설정해줘야한다. 
     - 아니면 InvalidAlgorithmParameterException 발생
-    - Cipher-Mode
+    - Operation Mode
         > **ENCRYPT_MODE**: cipher 객체를 암호화 모드로 초기화한다. 
         >
         > **DECRYPT_MODE**: cipher 객체를 복호화 모드로 초기화한다. 
